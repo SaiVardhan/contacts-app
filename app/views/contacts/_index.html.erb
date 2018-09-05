@@ -1,0 +1,15 @@
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.title %></td>
+    <td><%= contact.type %></td>
+    <td><%= contact.phone %></td>
+    <td><%= contact.ext %></td>
+    <td><%= contact.fax %></td>
+    <td><%= contact.email %></td>
+    <td><%= link_to 'Edit', edit_contact_path(contact), remote: true, class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete', contact_path(contact), remote: true, class: "btn btn-danger"  %></td>
+
+  </tr>
+<% end %>
+

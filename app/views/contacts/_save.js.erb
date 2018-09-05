@@ -1,0 +1,11 @@
+$("ul.errors").html("")
+<% if @contact.errors.any? %>
+ <% count = @contact.errors.size  %>
+  <% @contact.errors.full_messages.each do |message| %>
+  	<%= count %>
+    	$("ul.errors").append($("<li class='list-group-item list-group-item-danger'/>").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".contact-index").html("<%= escape_javascript(render 'index') %>")
+  $("#contact-modal").modal("hide")
+<% end %>
